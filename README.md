@@ -6,8 +6,8 @@
 1. 首先將文物描述等資訊按照下列格式編寫
 ```
 [文物編號] 文物內容...
-[31922] 胡念祖(1927- )湖南省益陽人，字心原...
-[31923] 胡念祖(1927- )湖南省益陽人，字心原...
+31922 胡念祖(1927- )湖南省益陽人，字心原...
+31923 胡念祖(1927- )湖南省益陽人，字心原...
 ...
 ```
 並存成純文字檔，編碼使用 big5。有鑑於公家機關的研究人員多使用Windows和Word填寫資訊，故script預設使用big5讀寫檔案。
@@ -32,8 +32,11 @@ python script_big5.py [info_path] [csv_path] [result_path]
 ```
 
 範例如下`python script_big5.py my_content.txt data.csv result.csv `
+
 my_content.csv 為研究員撰寫的文物內容說明的純文字路徑
-data.csv  為文物資料的excel轉成csv的路徑
+
+data.csv  為文物資料的excel轉成csv(步驟2)檔案的路徑
+
 result.csv 為結果輸出路徑
 
 執行完畢後會將文物說明按照文物編號寫入到正確的欄位
