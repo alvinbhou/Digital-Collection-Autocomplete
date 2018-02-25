@@ -24,15 +24,15 @@ data_csv = []
 with open(csv_path, 'r', encoding = 'big5') as f:
     re = csv.reader(f)
     for idx, r in enumerate(re):
-        # skip first three rows
-        if(idx <= 2 or len(r) < 3):
+        # skip first two rows
+        if(idx <= 1 or len(r) < 3):
             continue
         target_idx = r[0]
         # 23: content index 文字描述
         if target_idx in d:
             nhm_header = "國立歷史博物館藏"
             artefact_name = r[4]
-            r[23] = nhm_header + '《' + artefact_name + '》（' + target_idx + "）" +  d[target_idx]
+            r[23] = nhm_header + '《' + artefact_name + '》（' + target_idx + "），作者 " +  d[target_idx]
         data_csv.append(r)    
 
 writer = csv.writer(open(result_path, 'w', encoding = 'big5', newline=''))
