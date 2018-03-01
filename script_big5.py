@@ -32,7 +32,7 @@ with open(csv_path, 'r', encoding = 'big5') as f:
         if target_idx in d:
             nhm_header = "國立歷史博物館藏"
             artefact_name = r[4]
-            r[23] = nhm_header + '《' + artefact_name + '》（' + target_idx + "），作者 " +  d[target_idx]
+            r[23] = nhm_header + '《' + artefact_name + '》（' + target_idx + "），" +  d[target_idx]
         data_csv.append(r)    
 
 writer = csv.writer(open(result_path, 'w', encoding = 'big5', newline=''))
