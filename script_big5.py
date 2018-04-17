@@ -9,7 +9,7 @@ csv_path = sys.argv[2]
 result_path = sys.argv[3]
 
 d = {}
-with open(content_path, 'r', encoding = 'big5') as f:
+with open(content_path, 'r', encoding = 'big5hkscs') as f:
     lines = f.readlines()
     for line in lines:
         if line == '\n' or len(line) < 3 :
@@ -21,7 +21,7 @@ with open(content_path, 'r', encoding = 'big5') as f:
         d[num] = content
 # print(d)
 data_csv = []
-with open(csv_path, 'r', encoding = 'big5') as f:
+with open(csv_path, 'r', encoding = 'big5hkscs') as f:
     re = csv.reader(f)
     for idx, r in enumerate(re):
         # skip first two rows
@@ -35,5 +35,5 @@ with open(csv_path, 'r', encoding = 'big5') as f:
             r[23] = nhm_header + '《' + artefact_name + '》（' + target_idx + "），" +  d[target_idx]
         data_csv.append(r)    
 
-writer = csv.writer(open(result_path, 'w', encoding = 'big5', newline=''))
+writer = csv.writer(open(result_path, 'w', encoding = 'big5hkscs', newline=''))
 writer.writerows(data_csv)
