@@ -1,7 +1,17 @@
 # Digital-Collection-Autocomplete
 協助國立歷史博物館「數位典藏完備計畫」之文物計畫填寫自動化
 
-## How to use
+![](https://i.imgur.com/siK8VRC.jpg)
+## Project goal
+本服務協助歷史博物館的研究人員，免除手動填寫複製文字到Excel的麻煩
+
+網站不收集也不儲存任何研究人員的成果，僅做重新排序與整合
+
+網站: [Digital-Collection-Autocomplete](https:cryolitez.github.io/Digital-Collection-Autocomplete/)
+
+若不想使用網站，可使用[Python script](script_big5.py)於local完成
+
+## How to use the script
 
 1. 首先將文物描述等資訊按照下列格式編寫
 ```
@@ -48,6 +58,5 @@ result.csv
 
 將以上結果全選複製貼上到原文物資料excel即可
 
-
-
-
+## Credits
+Website designed by html5up.net | @ajlkn
