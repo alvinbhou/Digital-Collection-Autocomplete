@@ -2,14 +2,18 @@
     width: 300px !important;
 }
 
-.info-text {
-    position: absolute;
-    top: 30px;
-    right: 20px;
+
+@media only screen and (min-width: 400px) {
+    .info-text {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
 }
 
+
 .demo-img {
-    width: 500px;
+    width: 100%;
 }
 
 .important-text {
