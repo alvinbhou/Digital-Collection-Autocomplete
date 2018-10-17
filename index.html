@@ -11,42 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/toast.min.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			.textarea-wrapper{
-				width: 300px!important;
-			}
-
-			.info-text{
-				position: absolute;
-				top: 30px;
-				right: 20px;
-			}
-
-			#content-text{
-				width: 375px!important;
-			}
-
-			kbd {
-				padding:0.1em 0.6em;
-				border:1px solid #ccc;
-				font-size:11px;
-				font-family:Arial,Helvetica,sans-serif;
-				background-color:#f7f7f7;
-				color:#333;
-				-moz-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
-				-webkit-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
-				box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
-				-moz-border-radius:3px;
-				-webkit-border-radius:3px;
-				border-radius:3px;
-				display:inline-block;
-				margin:0 0.1em;
-				text-shadow:0 1px 0 #fff;
-				line-height:1.4;
-				white-space:nowrap;
-			}
-		</style>
 	</head>
 	<body class="is-preload">
 
@@ -54,7 +20,7 @@
 			<section id="header">
 				<header>
 					<h1>Digital Collection Autocomplete</h1>
-					<p>協助國立歷史博物館「數位典藏完備計畫」之文物計畫填寫自動化</p>
+					<p>協助文化部「數位典藏完備計畫」之文物計畫填寫自動化</p>
 				</header>
 				<footer>
 					<a href="#banner" class="button style2 scrolly-middle">GET STARTED</a>
@@ -66,7 +32,7 @@
 				<header>
 					<h2>How it works</h2>
 				</header>
-				<p> 本服務協助歷史博物館的研究人員，免除手動填寫複製文字到Excel的麻煩<br>
+				<p> 本服務協助歷史博物館的研究人員，免除手動填寫文字到Excel的麻煩<br>
 					網站不收集也不儲存任何研究人員的成果，僅做重新排序與整合<br>
 					本服務公開原始碼於<a href="https://github.com/CryoliteZ/Digital-Collection-Autocomplete">Github</a>上
 				</p>	
@@ -81,14 +47,14 @@
 				<div class="textarea-wrapper">
 					<div>典藏編號(TOTID) </div>
 					<form>
-						<textarea  id="ref-id" rows = "5" placeholder="27263&#10;27264&#10;27265&#10;27266&#10;..."></textarea>
+						<textarea  id="ref-id" rows = "5" placeholder="[請於此貼上]&#10;27263&#10;27264&#10;27265&#10;27266&#10;..."></textarea>
 					</form>
 					<br/>
 				</div>
 				<div class="textarea-wrapper">
 					<div>中文名稱(CNAME) </div>
 					<form>
-						<textarea id="ref-cname" rows="5" placeholder="柏菊芝石&#10;富貴長春&#10;桐蔭清話&#10;嬉嬰圖&#10;..."></textarea>
+						<textarea id="ref-cname" rows="5" placeholder="[請於此貼上]&#10;柏菊芝石&#10;富貴長春&#10;桐蔭清話&#10;嬉嬰圖&#10;..."></textarea>
 					</form>
 					<br/>
 				</div>
@@ -96,10 +62,11 @@
 					<header>
 						<h2>典藏編號 與	中文名稱</h2>
 					</header>
-					<p>將Excel內的『典藏編號(TOTID)』與『中文名稱CNAME)』兩欄複製貼上於左側。<br><br>
-						可以點取該欄第一個元素後按 <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> +<kbd>↓</kbd> 選取整列後再按 <kbd>CTRL</kbd> + <kbd>C</kbd> 複製 ，再到左邊輸入框<kbd>CTRL</kbd> + <kbd>V</kbd> 貼上
+					<p>選取Excel內的<span class="important-text">典藏編號(TOTID)</span> 與<span class="important-text">中文名稱CNAME)</span> 兩欄，分別複製貼上於左側<br><br>
+
+						<img class= "demo-img" src="https://i.imgur.com/NaDxeiG.png"/> 
 						<br><br>
-						注意：兩欄須對的上
+						提醒：兩欄須對的上，另外可以按 <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> +<kbd>↓</kbd> 來全選一整欄
 						<br><br>
 						教學影片： <a href='https://gfycat.com/EverlastingCompleteHamadryad' target="_blank">link</a>
 						
@@ -108,11 +75,11 @@
 			</article>
 
 		<!-- Feature 2 -->
-			<article class="container box style1 right">
+			<article id = "second" class="container box style1 right">
 				<div class="textarea-wrapper">
 					<div>文物描述</div>
 					<form>
-						<textarea id="content-text" rows = "16" placeholder="27263 此件作品創作於1965年10月，以水墨設色技法創作，描繪象徵吉祥長壽與清雅之柏樹、菊花、奇石與靈芝，皆為象徵長壽祥瑞之物&#10;&#10;27265 此件作品創作於1964年夏，以水墨設色技法創作，以水墨設色技法創作之人物畫，描繪梧桐樹蔭下一對婷婷而立之古裝麗人&#10;&#10;27264 畫幅前景以墨色寫意畫出形狀奇巧之岩石，以及岩間亭亭盛開牡丹花，顏色有紅、黃、粉三色&#10;&#10; ..."></textarea>
+						<textarea id="content-text" rows = "16" placeholder="[請於此貼上]&#10;27263 此件作品創作於1965年10月，以水墨設色技法創作，描繪象徵吉祥長壽與清雅之柏樹、菊花、奇石與靈芝，皆為象徵長壽祥瑞之物&#10;&#10;27265 此件作品創作於1964年夏，以水墨設色技法創作，以水墨設色技法創作之人物畫，描繪梧桐樹蔭下一對婷婷而立之古裝麗人&#10;&#10;27264 畫幅前景以墨色寫意畫出形狀奇巧之岩石，以及岩間亭亭盛開牡丹花，顏色有紅、黃、粉三色&#10;&#10; ..."></textarea>
 					</form>
 				</div>
 				<div class="inner info-text">
@@ -120,19 +87,22 @@
 						<h2>填寫文物描述</h2>
 					</header>
 					<p>
-						將研究人員所寫之文物描述複製貼上於左方，無須按照順序。填寫格式如下:<br><br>
+						將研究人員所寫之文物描述複製貼上於左方，<span class="important-text">無須按照順序</span>
+						<br><br>
+						<img class= "demo-img" src="https://i.imgur.com/KXX5xoK.png"/> 
+						填寫格式如下:<br>
 						[典藏編號][空白][文物描述內文....]<br>
 						[空行]<br>
 						[典藏編號][空白][文物描述內文....]<br>
-						[空行]<br>
-						...<br>
-						<br>
-						格式可參考左邊範例，教學影片：<a href="https://gfycat.com/OffensiveImportantEidolonhelvum" target="_blank">link</a>
+						...<br><br>
+						提醒：格式可參考左邊範例，文物描述內文<span class="important-text">不用寫典藏編號或作品名稱</span>，最後會自動填入
+						<br><br>
+						教學影片：<a href="https://gfycat.com/OffensiveImportantEidolonhelvum" target="_blank">link</a>
 					</p>
 				</div>
 			</article>
 
-		<!-- Portfolio -->
+		<!-- Generate -->
 			<article class="container box style2">
 				<header>
 					<h2>即將完成</h2>
@@ -144,13 +114,11 @@
 			
 			</article>
 
-		<!-- Contact -->
+		<!-- Result -->
 			<article id="last" class="container box style3">
 				<header>
 					<h2>完成結果</h2>
-					<p>將以下文字複製貼上回Excel『文物描述』欄就完成了！
-						<br>
-						教學影片：<a href="https://gfycat.com/WillingSafeDungenesscrab" target="_blank">link</a>
+					<p>將以下文字複製貼上回Excel<span class="important-text"> 文物描述 </span>欄就完成了！
 					</p>
 				</header>
 				<form method="post" action="#">
@@ -165,18 +133,45 @@
 						</div>
 					</div>
 				</form>
+				<div class="bottom-result-container">
+					<img class= "demo-img" src="https://i.imgur.com/Ui6frVx.jpg"/> 
+						<br>
+						教學影片：<a href="https://gfycat.com/WillingSafeDungenesscrab" target="_blank">link</a>
+				</div>
 			</article>
+
+			<article class="container box style2">
+				<header>
+					<h2> <a class="icon fa-code"></a></h2>
+					<p>使用上有遇到任何問題可以開 
+						<a href="https://github.com/CryoliteZ/Digital-Collection-Autocomplete/issues">Issue</a> 或是 
+						聯絡 <a href="https://telegram.me/alvinbhou">開發者</a></p>
+					<p>
+						如果覺的實用的話也歡迎在 <a href="https://cryolitez.github.io/">Github </a>上按星星！
+					</p>
+					<p>
+						
+					</p>
+				</header>
+			
+			</article>	
 
 
 
 		<section id="footer">
 			<ul class="icons">
+				
 				<li><a href="https://github.com/CryoliteZ/Digital-Collection-Autocomplete" class="icon fa-github"><span class="label">Github</span></a></li>
+				<li><a href="https://telegram.me/alvinbhou" class="icon fa-telegram"><span class="label">Telegram</span></a></li>
 				<li><a href="https://cryolitez.github.io/" class="icon fa-globe"><span class="label">Website</span></a></li>
 			</ul>
 			<div class="copyright">
 				<ul class="menu">
-					<li>&copy; CryoliteZ 2018</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; CryoliteZ 2018</li>
+					<li> 
+						支援 <span class="icon fa-firefox"></span> <span class="icon fa-chrome"></span> <span class="icon fa-internet-explorer "></span> 瀏覽器
+					</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</div>
 		</section>
@@ -191,6 +186,14 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/toast.min.js"></script>
 			<script src="assets/js/script.js"></script>
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116950961-4"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
+			gtag('config', 'UA-116950961-4');
+			</script>
 	</body>
 </html>

@@ -1,5 +1,5 @@
 # Digital-Collection-Autocomplete
-協助國立歷史博物館「數位典藏完備計畫」之文物計畫填寫自動化
+協助文化部「數位典藏完備計畫」之文物計畫填寫自動化
 
 [![](https://i.imgur.com/siK8VRC.jpg)](https://cryolitez.github.io/Digital-Collection-Autocomplete/)
 ## Project goal
