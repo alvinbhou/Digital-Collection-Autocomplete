@@ -18,14 +18,18 @@ $(document).ready(function(){
         var nhm_header = "國立歷史博物館藏"
 
         for(var i = 0; i < ref_id.length; ++i){
-            if(ref_id[i] in content_dict && ref_id[i].toString().length > 0){
+            if( ref_id[i].toString().length == 0)continue;
+            if(ref_id[i] in content_dict){
                 result +=  nhm_header + '《' + ref_cname[i] + '》（' + ref_id[i] + "），" +  content_dict[ref_id[i]] +'\n'
-                result_arr.push({ cname: ref_cname[i], content: content_dict[ref_id[i]]});
+                // result_arr.push({ cname: ref_cname[i], content: content_dict[ref_id[i]]});
+            }
+            else {
+                result +=  '找不到文物說明\n';
             }
         }
         console.log(ref_id);
         console.log(content_dict);
-        console.log(result_arr);
+        // console.log(result_arr);
         // console.log(result);
         $('#result-text').val(result);
     });
